@@ -22,8 +22,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="RegisteredCourses">My Courses</a>
                 </li>
-                <li class="nav-item" th:if="${ADMIN}">
-                    <a class="nav-link" href="Add_course">Add New Course</a>
+                <li class="nav-item" >
+                    <a class="nav-link" href="Add_Course">Add New Course</a>
                 </li>
             </ul>
         </div>
@@ -38,21 +38,23 @@
                      alt="cover page" style="object-fit: cover; height: 200px;">
                 <div class="card-body" style=" height: 200px;">
                     <h5 class="card-title" th:text="${c.Name}"></h5>
-                    <h2 class="card-text" th:text=" ${c.Price}"></h2>
-                    <div >
+                    <h2 class="card-text" th:text=" ${c.Cost}"></h2>
+                    <div style="flex-d">
 
                         <a th:href="@{/deleteMyCourse/{id}(id=${c.id})}"
                            class="btn btn-primary "
                            style="background-color:red;">Delete</a>
-                    </div>
-                    <div>
+
                         <a th:href="@{/Add_to_My_courses/{id}(id=${c.id})}"
                            style="background-color:green;"
                            class="btn btn-primary">Buy Now</a>
                     </div>
+                    <div>
+
+                    </div>
 
 
-                    <p th:text="${c.Author}"></p>
+<!--                    <p th:text="${c.Author}"></p>-->
 
                 </div>
             </div>

@@ -6,9 +6,19 @@ import com.bbtechnologies.Bloggs.Repository.CourseRepository;
 import com.bbtechnologies.Bloggs.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
-import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class CourseService {
@@ -20,9 +30,8 @@ public class CourseService {
 
 
     //Creating a course
-    public void CreateCourse(Course course){
-        courseRepository.save(course);
-    }
+
+
 
     //Listing All the courses
     public List<Course> GetAllCourses(){
