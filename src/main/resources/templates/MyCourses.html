@@ -25,42 +25,36 @@
                 <li class="nav-item" >
                     <a class="nav-link" href="Add_Course">Add New Course</a>
                 </li>
-                <li class="nav-item" >
-                    <a class="nav-link" href="AddUser">Add New User</a>
-                </li>
             </ul>
         </div>
     </div>
 </nav>
 <div class="container text-center">
     <div class="row">
-        <div class="col-6 col-md-4" th:each="c :${course}">
-            <div class="col-6 col-md-4" th:each="user:${user}">
+
+        <div class="col-6 col-md-4" th:each="my :${mycourse}">
             <div class="card my-5"  style="width: 18rem; my-5 margin: 6px;" >
-                <img th:src="@{'Uploads/'+${c.CoverPage}}" class="card-img-top"
+                <img th:src="@{'Uploads/'+${my.CoverPage}}" class="card-img-top"
                      alt="cover page" style="object-fit: cover; height: 200px;"/>
                 <div class="card-body" style=" height: 200px;">
-                    <h5 class="card-title" th:text="${c.Name}"></h5>
-                    <h2 class="card-text" th:text=" @{'K'+${c.Cost}}"></h2>
+                    <h5 class="card-title" th:text="${my.Name}"></h5>
+                    <h2 class="card-text" th:text=" @{'K'+${my.Cost}}"></h2>
                     <div style="flex-d">
+                        <a href="#"
+                           style="background-color:green;"
+                           class="btn btn-primary">Open Course</a>
 
-                        <a th:href="@{/deleteCourse/{id}(id=${c.id})}"
+                        <a th:href="@{/deleteMyCourse/{id}(id=${my.id})}"
                            class="btn btn-primary "
                            style="background-color:red;">Delete</a>
 
-                        <a th:href="@{/{user_id}/Add_to_My_courses/{id}(id=${c.id},user_id=${user.Id})}"
-                           style="background-color:green;"
-                           class="btn btn-primary">Buy Now</a>
                     </div>
                     <div>
+
                     </div>
-                    </div>
-
-
-<!--                    <p th:text="${c.Author}"></p>-->
-
                 </div>
-            </div>
+        </div>
+
 
         </div>
 

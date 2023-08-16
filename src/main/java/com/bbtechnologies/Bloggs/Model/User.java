@@ -1,10 +1,13 @@
 package com.bbtechnologies.Bloggs.Model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,6 +23,7 @@ public class User {
     private String Password;
 
     @ManyToMany(mappedBy = "userList")
-    private List<Course> courseList;
+
+    private List<Course> courseList=new ArrayList<>();
 
 }

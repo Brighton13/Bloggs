@@ -22,7 +22,7 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
     private String Name;
-    private String Cost;
+    private int Cost;
     private String CoverPage;
 
     @ManyToMany

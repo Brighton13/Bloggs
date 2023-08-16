@@ -18,4 +18,12 @@ public class UserService {
         User user =userRepository.findById(id).get();
         return user.getCourseList();
     }
+
+    public void CreateUser(User user){
+        userRepository.save(user);
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
 }
